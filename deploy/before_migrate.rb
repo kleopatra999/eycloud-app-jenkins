@@ -1,5 +1,4 @@
-# Set up a chef 0.10 dna.json file (for stack-v1 + stack-v2)
-# TODO does this run on non-app-master/solo?
+require "rubygems"
 require "json"
 
 custom_json = config.node.dup
