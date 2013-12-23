@@ -1,6 +1,3 @@
-require "rubygems"
-require "json"
-
 custom_json = config.node.dup
 custom_json['run_list'] = 'recipe[main]'
 
@@ -8,7 +5,7 @@ dna_path = File.join(config.release_path, "deploy", "dna.json")
 dna_target = "/etc/chef-custom/dna.json"
 
 File.open(dna_path, 'w') do |f|
-  f.puts JSON.pretty_generate(custom_json)
+  f.puts custom_json.to_json
   f.chmod(0600)
 end
 
