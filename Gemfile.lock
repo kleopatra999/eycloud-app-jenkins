@@ -59,7 +59,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  chef
   eycloud-helper-common
   rack
   rake
