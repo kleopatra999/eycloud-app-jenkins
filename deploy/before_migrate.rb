@@ -11,5 +11,4 @@ end
 
 # Runs application cookbooks
 sudo "cp -f #{dna_path} #{dna_target}"
-run "cd #{config.release_path} && sudo chef-solo -c #{config.release_path}/deploy/solo.rb -j #{dna_target}"
-run "cat #{config.release_path}/deploy/chef-stacktrace.out 2> /dev/null || echo 'Chef run successful'"
+sudo! "cd #{config.release_path} && chef-solo -c #{config.release_path}/deploy/solo.rb -j #{dna_target}"
